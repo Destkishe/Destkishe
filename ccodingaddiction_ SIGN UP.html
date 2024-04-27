@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Coding Addiction</title>
+    <link rel="stylesheet" href="./validationform.css">
+    <link href="\medium\30\95\2EIY0m.jpg" rel="icon">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; 
+    
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: url(./images/dico.jpg);
+  background-size: cover;
+  background-color: #1BB295;
+}
+@font-face {
+    font-family: header;
+    src: url(../fonts/Abel-Regular.ttf);
+}
+form{
+  padding: 25px;
+  background: #fff;
+   max-width: 500px;
+   width: 100%;
+  border-radius: 7px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+form {
+    margin-bottom: 15px;
+    position: relative;
+}
+form h2{
+    font-size: 27px;
+    text-align: center;
+    margin: 0px 0 30px;
+    font-family: header;
+}
+form label{
+    margin-bottom: 7px;
+    font-size: 15px;
+    display: block;
+    font-weight: bold;
+}
+
+form input,
+form .check{
+  height: 15px;
+  display: block; 
+  padding: 24px; 
+  width: 5%;
+
+ }
+form label, 
+form .check{
+    display: inline;
+    font-weight: normal;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+form input,
+form select {
+  height: 45px;
+  padding: 10px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #bfbfbf;
+}
+
+.submit-btn {
+    margin-top: 30px;
+  }
+  
+  .submit-btn input {
+    color: white;
+    border: none;
+    height: auto;
+    text-align: center;
+    font-size: 16px;
+    padding: 13px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    background: #1BB295;
+    transition: 0.2s ease;
+  }
+  
+  .submit-btn input:hover {
+    background: rgba(0, 0, 255, 0.35);
+  }
+  p{
+    display: none;
+    color: red;
+    font-family: header;
+    font-weight: bold;
+  }
+</style>
+<body>
+    <form action="../R&D/ccodingaddiction_ SIGN UP.html" method="post">
+        <h2>CODING ADDICTION <br> SIGN-UP</h2>
+        <div class="form-group firstname">
+          <label for="firstname">Full Name</label>
+          <input type="text" id="ufname" placeholder="Enter your full name">
+          <p id="error1">*This field is required</p>
+        </div>
+          <div class="form-group email">
+            <label for="Email">Email</label>
+            <input type="email" id="uemail" placeholder="Enter your email">
+            <p id="error2">*This field is required</p>
+          </div>
+          <div class="form-group DOB">
+            <label for="DOB">Date Of Birth</label>
+            <input type="date" id="uDOB">
+            <p id="error3">*This field is required</p>
+          </div>
+          <div class="form-group gender">
+            <label for="DOB">Gender</label>
+          <select id="gender">
+           <option value="" selected disabled>Select your gender</option>
+           <option value="male">Male</option>
+           <option value="female">Female</option>
+           <option value="others">Others</option>
+          </select>
+          <p id="error4">*This field is required</p>
+          </div>
+          
+          <div class="form-group password">
+            <label for="Password">Password</label>
+            <input type="password" id="upassword" placeholder="Enter your password"><br>
+            <input type="checkbox" onclick="show()" class="check">
+            <label for="Password">Show-passowrd</label>
+            <p id="error5">*This field is required</p>
+          </div>
+          <div class="form-group Confirm-Password">
+            <label for="Password">Confirm-Password</label>
+            <input type="password" id="ucpassword" placeholder="Confirm your password"><br>
+            <input type="checkbox" onclick="cshow()" class="check" >
+            <label for="Password">Show-password cofirmation</label>
+            <p id="error6">*This field is required</p>
+          </div> 
+          <div class="form-group submit-btn">
+            <input type="submit" value="REGISTER" onclick="go()">
+          </div>
+    </form>
+</body>
+</html>
+
+<script>
+  function show(){
+    var x= document.getElementById('upassword');
+    if(x.type==="password"){
+      x.type="text";
+    }else{
+      x.type="password";
+    }
+  }
+
+  function cshow(){
+    var x= document.getElementById('ucpassword');
+    if(x.type==="password"){
+      x.type="text";
+    }else{
+      x.type="password";
+    }
+  }
+function go(){
+    var a=document.getElementById('ufname').value;
+    var b=document.getElementById('uemail').value;
+    var c=document.getElementById('uDOB').value;
+    var d=document.getElementById('gender').value;
+    var e=document.getElementById('upassword').value;
+    var f=document.getElementById('ucpassword').value;
+    var g=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+   
+
+    if(a!="" && b!="" && c!="" && d!="" && e!="" && f!=""){
+           if(b.match(g)){
+                if(e==f){
+                     
+                   window.open('https://www.instagram.com/ccoding_addiction/');
+                  
+                    
+                }else{
+                  alert("Error! Password mismatch");
+                }
+           }else{
+            alert("Invalid Email Address!");
+           }
+    }else{
+      if(a==""){
+         document.getElementById("ufname").style.borderColor="red";
+         document.getElementById('error1').style.display="block";
+      }
+      if(b==""){
+         document.getElementById("uemail").style.borderColor="red";
+         document.getElementById('error2').style.display="block";
+      }
+      if(c==""){
+         document.getElementById("uDOB").style.borderColor="red";
+         document.getElementById('error3').style.display="block";
+      }
+      if(d===""){
+         document.getElementById("gender").style.borderColor="red";
+         document.getElementById('error4').style.display="block";
+      }
+      if(e==""){
+         document.getElementById("upassword").style.borderColor="red";
+         document.getElementById('error5').style.display="block";
+      }
+      if(f==""){
+         document.getElementById("ucpassword").style.borderColor="red";
+         document.getElementById('error6').style.display="block";
+      }
+    }
+}
+</script>
+
